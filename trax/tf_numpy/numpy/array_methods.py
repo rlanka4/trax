@@ -86,8 +86,8 @@ def argmax(a, axis=None):
     If `axis` is None, a scalar array is returned.
   """
   a = array_creation.asarray(a)
-  if axis is None or utils.isscalar(a):
-    # When axis is None or the array is a scalar, numpy flattens the array.
+  if axis is None:
+    # When axis is None numpy flattens the array.
     a_t = tf.reshape(a.data, [-1])
   else:
     a_t = a.data
@@ -108,8 +108,8 @@ def argmin(a, axis=None):
     If `axis` is None, a scalar array is returned.
   """
   a = array_creation.asarray(a)
-  if axis is None or utils.isscalar(a):
-    # When axis is None or the array is a scalar, numpy flattens the array.
+  if axis is None:
+    # When axis is None numpy flattens the array.
     a_t = tf.reshape(a.data, [-1])
   else:
     a_t = a.data
